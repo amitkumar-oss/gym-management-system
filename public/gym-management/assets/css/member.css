@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #ffffff;
+    --text-color2: #444444;
+    --main-color: #ee8a08ee;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(to right, #455a6e, #000000);
+    color: var(--text-color);
+}
+
+span {
+    color: var(--main-color);
+}
+
+section {
+    max-width: 85vw;
+    padding: 10rem 6% 2em;
+    margin: 2rem auto;
+
+
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 15vh;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2rem 9%;
+    transition: all 0.5s ease;
+    background: var(--snd-bg-color);
+
+}
+
+.logo {
+    position: relative;
+    right: 6%;
+    font-size: 4rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-logo i {
+    font-size: 18px;
+}
+
+.user-email {
+    font-size: 16px;
+    padding: 0 10px;
+    color: var(--text-color);
+}
+
+.logoutBtn {
+    padding: 4px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgb(233, 17, 17);
+    cursor: pointer;
+    background: rgb(233, 17, 17);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+
+
+}
+
+.logoutBtn:hover {
+    background: rgb(194, 16, 16);
+    box-shadow: 0 0 10px rgb(233, 17, 17);
+
+}
+
+
+
+
+/* Supplement section */
+
+.suppliment-section {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 12rem;
+}
+
+.section-header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 30px;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.suppliment-section .section-title {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+
+.section-title i {
+    margin-right: 8px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: rgb(136, 133, 133);
+    margin-bottom: 30px;
+}
+
+.supplements-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 10rem auto;
+}
+
+.supplement-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.supplement-card:hover {
+    transform: translateY(-5px);
+}
+
+.supplement-icon {
+    font-size: 30px;
+    color: #5e5df0;
+    margin-bottom: 10px;
+}
+
+.supplement-name {
+    font-size: 18px;
+    color: var(--main-color);
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.supplement-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.price {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.stock {
+    color: #999;
+}
+
+.supplement-category {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    text-transform: uppercase;
+    display: inline-block;
+    color:var(--text-color2);
+}
+
+
+/* Diet Section  */
+
+#diet-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.diet-container {
+    width: 80%;
+}
+
+.diet-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.diet-header {
+    background-color: #e9edf5;
+    color: var(--text-color2);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.diet-date {
+    color: var(--text-color2);
+    padding: 1px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.diet-content {
+    padding: 14px;
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
+    margin: 6px 10px;
+}
+
+/* Bills Section Styling */
+
+#bills-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.bills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bill-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9edf5;
+    color: var(--text-color2);
+    padding: 16px 20px;
+    font-weight: 600;
+}
+
+.month {
+    font-size: 18px;
+}
+
+.amount {
+    font-size: 18px;
+}
+
+.bill-details {
+    padding: 16px 20px;
+    background-color: #fafafa;
+}
+
+.bill-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bill-date {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+/* Notifications Section  */
+
+#notification-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.notifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 8rem;
+}
+
+.notification-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+
+}
+
+.notification-content p {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    color:green;
+}
+
+.notification-date {
+    font-size: 12px;
+    color: #888;
+}
+
+
+
+/* responsive */
+
+
+@media (max-width: 1024px) {
+    section {
+        max-width: 90vw;
+        padding: 8rem 4% 2em;
+    }
+
+    .supplements-grid {
+        gap: 16px;
+    }
+
+    .supplement-card {
+        width: 240px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 1.5rem 5%;
+    }
+
+    .user-info {
+        margin-top: 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 3.2rem;
+    }
+
+    .supplements-grid,
+    .bills-container,
+    .notifications-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .supplement-card,
+    .bill-card,
+    .notification-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        backdrop-filter: blur(10px);
+        
+        background-color: rgb(17, 17, 17, 0.8);
+    }
+
+
+    .section-header h2 {
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .user-info {
+        display: flex;
+        gap:12rem;
+    }
+
+    .user-logo i {
+        font-size: 12px;
+    }
+
+    .user-email {
+        font-size: 10px;
+    }
+
+    .logoutBtn {
+        padding: 3px 10px;
+        border: 1px solid rgb(248, 13, 13);
+        font-size: 10px;
+    }
+
+    #suppliment-section .section-header h2 {
+        font-size: 3rem;
+
+    }
+
+    .diet-container {
+        width: 95%;
+    }
+
+    .diet-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8rem;
+    }
+    .diet-header h3{
+        font-size: 1.4rem; 
+    }
+
+    .diet-header .diet-date {
+        font-size: 0.9rem;
+        color:var(--text-color2)
+
+    }
+    
+    .diet-content {
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .bill-card {
+        width: 75vw;
+    }
+    .bill-header{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .month, .amount{
+        font-size: 1.6rem;
+    }
+
+  
+
+    .bill-date {
+        font-size: 1rem;
+    }
+
+    .notifications-container {
+        padding: 6px;
+    }
+
+    .notification-card {
+        padding: 12px 16px;
+        word-wrap: break-word;
+    
+    }
+    .notification-content{
+        padding: 0 ;
+    }
+    .notification-content p{
+        font-size: 12px;
+    }
+    .notification-content span{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .user-info{
+        display: flex;
+        gap: 6rem;
+    }
+    .supplement-card {
+        width: 100%;
+    }
+    
+    .bill-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .notification-card {
+        width: 100%;
+    }
+    .notification-content{
+        padding: 0 ;
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}

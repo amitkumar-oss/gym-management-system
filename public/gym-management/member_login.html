@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login-register.css">
+    <title>Member Login - Gym Management</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="brand-section">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h1 class="brand-title">The Warrior GYM</h1>
+                <p class="brand-subtitle">Strength • Fitness • Excellence</p>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="form-title">Member Login</h2>
+                <p class="form-subtitle">Access your member dashboard</p>
+                
+                <form id="memberLoginForm" class="auth-form">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">Login</span>
+                        <div class="btn-loading">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Not registered? <a href="member_register.html" class="link">Register Now</a></p>
+                        <p>Are you an admin? <a href="login.html" class="link">Admin Login</a></p>
+                    </div>
+                </form>
+                
+                <div id="status" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/member_login.js"></script>
+</body>
+</html>

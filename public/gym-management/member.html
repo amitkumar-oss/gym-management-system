@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/member.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <title>Member Dashboard</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">The Warrior <span>GYM</span></a>
+
+        <div class="user-info">
+            <div class="user-logo">
+                <i class="fas fa-user"></i>
+                <span class="user-email"></span>
+            </div>
+            <button class="logoutBtn" id="logoutBtn">log out</button>
+
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- supplement section -->
+
+        <section class="suppliment-section" id="suppliment-section">
+
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-pills"></i>Available Suppliment</h2>
+                <p class="section-subtitle">Boost your fitness journey with our premium supplements</p>
+            </div>
+            <div id="supplementList" class="supplements-grid">
+             
+        </section>
+
+
+        <!-- diet section -->
+
+        <section class="diet-section" id="diet-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-utensils"></i>
+                    Your Diet Plan
+                </h2>
+                <p class="section-subtitle">Personalized nutrition plan for your fitness goals</p>
+            </div>
+            <div id="dietView" class="diet-container">
+                <div class="diet-card" id="dietCard">
+                    <div class="diet-header">
+                        <h3>Current Diet Plan</h3>
+                        <p class="diet-date" id="dietDate">No date available</p>
+                    </div>
+                    <div class="diet-content" id="dietContent">
+                        No diet plan assigned yet.
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+
+        <!-- bills section -->
+
+        <section class="bills-section" id="bills-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-receipt"></i>
+                    Your Bills
+                </h2>
+                <p class="section-subtitle">Track your membership and service payments</p>
+            </div>
+            <div id="billsView" class="bills-container">
+                <div class="bill-card" id="placeholderBillCard">
+                    <div class="bill-header">
+                        <div class="month">No bills available</div>
+                        <div class="amount">₹0.00</div>
+                    </div>
+                    <div class="bill-details">
+                        <div class="bill-date">Not paid yet</div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- notification section -->
+
+        <section class=" notification-section" id="notification-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-bell"></i>
+                    Notifications
+                </h2>
+                <p class="section-subtitle">Stay updated with gym announcements and updates</p>
+            </div>
+            <div id="notifyView" class="notifications-container">
+                    <div class="notification-card" id="placeholderNotifyCard">
+                        <div class="notification-content">
+                            <p>No notifications yet</p>
+                            <span class="notification-date"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/member.js"></script>
+
+</body>
+
+</html>

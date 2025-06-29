@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">The Warrior <span>GYM</span></a>
+        
+        <!-- <div class="fa-solid fa-bars" id="menu-icon"></div> -->
+        
+        <nav>
+            <ul class="navbar">
+                <li><a href="#members">Members</a></li>
+                <li><a href="#billing">Billing</a></li>
+                <li><a href="#suppliments">Supplements</a></li>
+                <li><a href="#diet">Diet Plans</a></li>
+                
+                <button class="logoutBtn" id="logoutBtn">log out</button>
+            </ul>
+        </nav>
+        
+        
+    </header>
+    <main>
+        <div class="container">
+
+            <section class="admin-pannel">
+                <h2>Admin Dashboard</h2>
+                <p>Manage your gym operations efficiently</p>
+
+            </section>
+
+
+
+            <section class="members" id="members">
+
+                <div class="section-header">
+
+                    <h1><i class="fa-solid fa-users" id="member-icon"></i>Member Management</h1>
+                </div>
+
+                <!-- add members -->
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-user-plus"></i>Add New Member</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <form id="addMemberForm">
+                                <div class="form-group">
+                                    <label for="memberName">
+                                        <i class="fa-solid fa-user"></i>Member Name
+                                    </label>
+                                    <input type="text" id="memberName" placeholder="Member Name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="memberEmail">
+                                        <i class="fa-solid fa-envelope"></i>Email Address
+                                    </label>
+                                    <input type="email" id="memberEmail" placeholder="Email" required />
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="memberPhone">
+                                        <i class="fa-solid fa-phone"></i>Phone Number
+                                    </label>
+                                    <input type="number" id="memberPhone" placeholder="Phone Number" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="memberGender">
+                                        <i class="fa-solid fa-user"></i>Gender
+                                    </label>
+                                    
+                                    <select  id="memberGender" required>
+                                        <option disabled selected value="">-- Select Gender --</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Transgender">Transgender</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="memberDOB">
+                                        <i class="fa-solid fa-table"></i>Date of Birth
+                                    </label>
+                                    <input type="date" id="memberDOB" placeholder="DOB" required />
+                                </div>
+
+                                <!-- assign package -->
+
+                                <div class="form-group">
+                                    <label for="memberPackage">
+                                        <i class="fa-solid fa-box"></i>Assign Package
+                                    </label>
+                                    <select id="memberPackage" required>
+                                        <option disabled selected value="">-- Select Package --</option>
+                                        <option value="Basic">Basic</option>
+                                        <option value="Standard">Standard</option>
+                                        <option value="Pro">Pro</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit">Add Member</button>
+
+                            </form>
+
+                            <div id="addStatus"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- see all members -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-list"></i>All Members</h3>
+                            <button onclick="exportMembers()"><i class="fa-solid fa-download"></i>Export</button>
+                        </div>
+                        <div class="card-body">
+                            <div id="membersList"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </section> <!-- end section -->
+
+
+            <!-- biliing section -->
+
+            <section class="billing" id="billing">
+                <div class="section-header">
+                    <h1><i class="fa-solid fa-file-invoice-dollar"></i>Billing Management</h1>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-plus-circle"></i>Create New Bill</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <form id="createBillForm">
+                                <div class="form-group">
+                                    <label for="billMemberEmail">
+                                        <i class="fa-solid fa-envelope"></i>Email Address
+                                    </label>
+                                    <input type="email" id="billMemberEmail" placeholder="Email" required /> 
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount">
+                                        <i class="fa-solid fa-rupee-sign"></i>Amount
+                                    </label>
+                                    <input type="text" id="amount" placeholder="Amount" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="month">
+                                        <i class="fa-solid fa-calendar"></i>Month
+                                    </label>
+                                    <input type="text" id="month" placeholder="e.g. January 2025" required />
+                                </div>
+
+                                <button type="submit">Create Bill</button>
+
+                            </form>
+
+                            <div id="billStatus"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- notification -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-bell"></i>Send Notifications</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="notifyForm">
+                                <div class="form-group">
+                                    <label for="targetEmail">
+                                        <i class="fa-solid fa-calendar"></i>Email
+                                    </label> 
+                                    <input type="email" id="targetEmail" placeholder="Enter member email" required> <br> <br>
+
+                                    <!-- <label for="notifyMonth">
+                                        <i class="fa-solid fa-calendar"></i>Date
+                                    </label>
+                                    <input type="date" id="notifyMonth"  required /> -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">
+                                        <i class="fa-solid fa-message"></i>Message
+                                    </label>
+                                    <textarea id="message" rows="4" cols="60" placeholder="message"></textarea>
+                                </div>
+
+
+                                <button type="submit">Send Notifications</button>
+
+                            </form>
+
+                            <div id="notifyStatus"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- export report -->
+
+            <section class="export-report" id="export-report">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-chart-bar"></i>Export Report</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="export-btn">
+                            <button onclick="exportMembers()"><i class="fa-solid fa-users"></i>Export Members</button>
+                            <button onclick="exportBills()"><i class="fa-solid fa-file-invoice"></i>Export
+                                Bills</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <!-- suppliments -->
+
+            <section class="suppliments" id="suppliments">
+
+                <div class="section-header">
+
+                    <h1><i class="fa-solid fa-pills"></i>Suppliments Store</h1>
+                </div>
+
+                <!-- add suppliments -->
+
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-plus-circle"></i>Add Suppliments</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <form id="supplementForm">
+                                <div class="form-group">
+                                    <label for="supplementName">
+                                        <i class="fa-solid fa-tag"></i>Suppliment Name
+                                    </label>
+                                    <input type="text" id="supplementName" placeholder="Suppliment Name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="supplementPrice">
+                                        <i class="fa-solid fa-rupee-sign"></i>Price
+                                    </label>
+                                    <input type="number" id="supplementPrice" placeholder="Price" required />
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="supplementStock">
+                                        <i class="fa-solid fa-boxes"></i>Stock Quantity
+                                    </label>
+                                    <input type="number" id="supplementStock" placeholder="Quantity" required />
+                                </div>
+
+                                <button type="submit">Add Suppliments</button>
+
+                            </form>
+
+                            <div id="supplementStatus"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- see all suppliments -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa-solid fa-warehouse"></i>Store Inventory</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="supplementList"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </section> <!-- end section -->
+
+
+
+            <section class="diet" id="diet">
+                <div class="section-header">
+                    <h1><i class="fa-solid fa-pills"></i>Diet Plan Management</h1>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fa-solid fa-plus-circle"></i>Assign Diet Plan</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form id="dietForm">
+                            <div class="form-group">
+                                <label for="dietMemberEmail">
+                                    <i class="fa-solid fa-envelope"></i>Member Email
+                                </label>
+                                <input type="text" id="dietMemberEmail" placeholder="Member Email" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dietPlan">
+                                    <i class="fa-solid fa-rupee-sign"></i>Diet Plan Details
+                                </label>
+                                <textarea id="dietPlan" placeholder="Enter diet plan here..." rows="6" cols="100"
+                                    required></textarea>
+
+                            </div>
+
+
+                            <button type="submit">Assign Diet Plan</button>
+
+                        </form>
+
+                        <div id="dietStatus"></div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+
+        </div>
+    </main>
+
+
+
+
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/admin.js"></script>
+
+</body>
+
+</html>
