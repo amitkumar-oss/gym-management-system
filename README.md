@@ -115,7 +115,7 @@ To set up the project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/amitkumar-oss/gym-management-system
     cd Gym-Management-System
     ```
 
