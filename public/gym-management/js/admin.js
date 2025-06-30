@@ -322,28 +322,18 @@ document.getElementById("dietForm").addEventListener("submit", async function (e
     const plan = document.getElementById("dietPlan").value;
 
     try {
-        // await addDoc(collection(db, "diets"), {
-        //     email,
-        //     plan,
-        //     date: new Date().toISOString()
-        // });
-
-        // Create a unique ID based on email
-        const dietRef = doc(db, "diets", email);  // email will be used as document ID
-
-        await setDoc(dietRef, {
+        await addDoc(collection(db, "diets"), {
             email,
             plan,
             date: new Date().toISOString()
         });
 
-        alert(" Diet Plan Assigned!")
 
-        // document.getElementById("dietStatus").textContent = "✅ Diet Plan Assigned!";
+        alert(" Diet Plan Assigned!")
         document.getElementById("dietForm").reset();
 
     } catch (error) {
-        // document.getElementById("dietStatus").textContent = "❌ Error: " + error.message;
+    
         alert("Error:" + error.message)
     }
 });
